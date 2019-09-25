@@ -13,24 +13,8 @@ public class Rope
         int sec=0;
         int d1=a[1]-a[0];
         int d2=a[2]-a[1];
-        if( d1>=d && d2>=d )
-        {
-            System.out.println("0");
-            return;
-        }
-        else if( d1 >=d )
-        {
-            System.out.println(d-d2);
-        }
-        else if( d2>=d )
-        {
-            System.out.println(d-d1);
-        }
-        else
-        {
-            sec+=d-d1;
-            sec+=d-d2;
-            System.out.println(sec);
-        }
+        if(d>d1) sec+=d-d1;
+        if(d>d2) sec+=d-d2;
+        System.out.println(sec);
     }
 }
