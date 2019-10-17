@@ -1,8 +1,8 @@
 # Contributing to coding
 
 If you're reading this, you're awesome! Thank you for helping us make this project great and being a part of the coding community. Here are a few guidelines that will help you along the way.
-Code of Conduct
 
+### Code of Conduct
 
 Working on your first Pull Request? 
 
@@ -19,19 +19,19 @@ Working on your first Pull Request?
 
     git checkout -b <your name>
 
-If you want to add solutions to any problems on leetcode ,codeforces directly 
-    ```
-    create a file as <problem number>_<problem>.java  (eg: 42_RainWater.java)
-    ```
-or if you want to take problems on other competitive coding websites you are welcome to add a folder specifying the website
-(eg: if you wants to work on Hackerrank problems : add HackerRank folder then add files in it)
+If you want to add solutions to a problem on [LeetCode](http://leetcode.com), [Codeforces](http://codeforces.com/), create a new file as  
 
-or if you want to work on general problems : choose general folder specify problem description as comments in the file itsef.
+    <problem number>_<problem name>.java  (eg: 42_RainWater.java)
 
-    Make changes, commit and push to your fork:
+or if you want to add solutions to problems on other competitive coding websites, you are welcome to add a new folder specifying the website
+(eg: if you want to work on Hackerrank problems, create a new `HackerRank` folder and add files to it)
+
+or if you want to work on general problems, create a new file in the `General/` specifying the problem description as a comment in the file.
+
+When you're finished making changes, commit your code and push to your fork:
 
     git push -u origin <your name>
 
-   Go to the repository and make a Pull Request.
+Then go to the repository and make a Pull Request.
     
  THANK YOU!
