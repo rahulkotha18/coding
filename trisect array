@@ -1,0 +1,70 @@
+import java.io.*;
+public class trisect
+{
+int a[] = new int[1000005];
+int cumsum[] = new int[1000005];
+int x[] =  new int[1000005];
+int y[] = new int[1000005];
+public void main(String args[])
+{
+	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+	int n;
+	n = Integer.parseInt(in.readLine());
+	for(int i=0;i<n;i++)
+	{
+		a[i] = Integer.parseInt(in.readLine());
+		if(i>0)
+			cumsum[i]= a[i] + cumsum[i-1];
+		else
+			cumsum[i] = a[i];
+	}
+	int ans=0;
+	for(int i=0;i<n;i++)
+		x[i]=-1;
+	if(cumsum[n-1]<3 && cumsum[n-1]>-3 && cumsum[n-1]!=0)
+	{
+		System.out.println("0");
+		return;
+	}
+	int partsum = cumsum[n-1]/3;
+	int k=0;
+	for(int i=0;i<(n-2);i++)
+	{
+		if(cumsum[i] == partsum)
+		{
+			x[k] = i;
+			k++;
+		}
+	}
+	int l=0;
+	for(int i=x[0]+1;i<n-1;i++)
+	{
+		if(cumsum[i] == 2*partsum && (cumsum[n-1]-cumsum[i])==partsum)
+		{
+			y[l] = i;
+			l++;
+		}
+	}
+	int rem=0;
+	int pos=0;
+	for(int i=0;i<k;i++)
+	{
+		for(int j=rem;j<l;j++)
+		{
+			if(x[i]<y[j])
+			{
+				rem =j;
+				pos=1;
+				break;
+			}
+		}
+		if(pos==0)
+			break;
+		if(pos==1)
+			pos=0;
+		ans = ans + l-rem ;
+	}
+	System.out.println(ans);
+	return;
+}
+}
